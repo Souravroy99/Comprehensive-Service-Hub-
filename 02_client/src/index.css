@@ -1,0 +1,556 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color-scheme: dark;
+}
+
+:root {
+    --bg-color: #f4f3ff;
+    --btn-color: #646cff;
+    --dark-color: #242424;
+    --helper-color: #99b9ff;
+}
+
+html {
+    font-size: 50%;
+}
+
+body {
+    min-height: 100vh;
+}
+
+
+h1 {
+    font-size: 6rem;
+    line-height: 1.1;
+    font-weight: bold;
+}
+
+p,
+li,
+label,
+input,
+textarea {
+    font-size: 1.8rem ;
+}
+
+a {
+    font-weight: 500;
+    font-size: 2.2rem;
+    letter-spacing: 0.1rem;
+    color: var(--btn-color);
+    text-decoration: inherit;
+}
+  
+li {
+    list-style: none;
+}
+
+.container {
+    max-width: 140rem;
+    padding: 4rem 2.4rem;
+    margin: 0 auto;
+}
+  
+.grid {
+    
+    display: grid;
+    gap: 6.4rem;
+}
+
+.grid-two-cols{
+    grid-template-columns: repeat(2, 1fr) ;
+}
+
+.grid-four-column{
+    grid-template-columns: repeat(4, 1fr) ;
+}
+
+button{
+    text-transform: capitalize;
+    padding: 1rem 2.2rem;
+    font-size: 1.6rem ;
+    font-weight: 600;
+    color: #f4f3ff;
+    background-color: var(--btn-color);
+    cursor: pointer;
+    border: 0.1rem solid transparent;
+    border-radius: 0.8rem;
+    letter-spacing: 0.1rem;
+    transition: border-color 0.3s ;
+    margin: 1rem ;
+}
+
+.secondary-btn{
+    background-color: transparent;
+    margin-left: 3.2rem ;
+    box-shadow: inset 0 0 0 0.2rem var(--bg-color);  
+}
+
+.secondary-btn:hover{
+    box-shadow: inset 0 0 0 0.2rem var(--btn-color);  
+}
+
+button:hover{
+    /* Do not use 'border' property, use 'box-shadow' property */
+    box-shadow: inset 0 0 0 0.2rem var(--bg-color);  
+}
+
+a:hover, a.active{
+    color: #535bf2;
+}
+
+
+/******  Start Hero Section  ******/
+
+.section-hero{ /* Using Nesting */
+    & .grid{
+        align-items: center;
+    }
+
+    .hero-content{
+        & p{
+            color: #00ffaa ;
+            margin: 2.4rem 0 4.8rem 0;   
+            &:first-child{
+                color: rgb(255, 191, 0) ;
+                margin-bottom: 1.2rem ;
+            }
+        }
+    }
+
+    .hero-image{
+        display: flex;
+        justify-content: center;
+        & img {
+            width: 70%;
+            height: auto;
+        } 
+    }
+}
+
+
+/******  End Hero Section  ******/
+
+
+.section-analytics{
+    margin: 9.6rem 0 ;
+    & .container{ 
+        background-color: var(--bg-color);
+        border-radius: 1rem;
+    }
+    & .grid{
+        color: var(--dark-color) ;
+    }
+    & .div1{
+        text-align: center;
+        border-right: 0.2rem solid #242424;
+        border-color: rgb(5, 215, 100);
+
+        &:last-child{
+            border: none;
+        }
+    }
+    & h2{
+        font-size: 2.5rem;
+    }
+    & p{
+        text-transform: capitalize;
+    }
+}
+
+
+/******  Contact Form Start  ******/
+
+.section-contact {
+    & .btn-submit{
+        margin: auto 0 ;
+    }
+    & .contact-content {
+      padding: 0;
+    }
+    & .container {
+      padding-top: 3.2rem;
+    }
+    & .contact-img {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      & img {
+        width: 80%;
+        height: auto;
+      }
+    }
+  
+    & .section-form {
+      & form {
+        display: flex;
+        flex-direction: column;
+        gap: 3.2rem;
+      }
+      & label {
+        display: block;
+        margin-bottom: 1.2rem;
+        text-transform: capitalize;
+      }
+  
+      & input,
+      textarea {
+        width: 80%;
+        padding: 0.4rem 0.6rem;
+      }
+    }
+}
+/******  Contact Form End  ******/
+
+
+
+/************  Error Page Start  *************/
+
+#error-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#error-page .content{
+    max-width: 70rem;
+    text-align: center;
+}
+
+.content h2.header{
+    font-size: 18vw;
+    line-height: 1em;
+
+    -webkit-animation: animateErrorPage 8s ease-in-out infinite;
+    animation: animateErrorPage 8s ease-in-out infinite;
+
+    background: -webkit-repeating-linear-gradient(-60deg, #71b7e6, var(--bg-color), #b98acc, #ee8176, aliceblue, #9b59b6);
+    
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    background-size: 1000%;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes animateErrorPage {
+    0%{
+        background-position: 0 0 ;
+    }
+    25%{
+        background-position: 100% 0 ;
+
+    }
+    50%{
+        background-position: 100% 100% ;
+
+    }
+    75%{
+        background-position: 0 100% ;
+
+    }
+    100%{
+        background-position: 0 0 ;
+    }
+}
+
+.btns button{
+    background-color: transparent ;
+    border: 0.2rem solid var(--btn-color);
+}
+
+/************    Error Page End    *************/ 
+
+
+/************   Registration and Login Form Start   *************/ 
+
+.section-register{
+    & .container{
+        justify-content: center;
+    }
+
+    & .registration-form{
+        display: flex;
+        flex-direction: column;
+
+        & label {
+            display: block;
+            margin-bottom: 1.2rem;
+            text-transform: capitalize;
+        }
+        & input{
+            width: 80%;
+            padding: 0.4rem 0.6rem;
+
+        }
+        & form {
+            display: flex;
+            flex-direction: column;
+            gap: 3.2rem;
+        }
+        & .reg-btn-submit{
+            margin-top: -1rem ;
+            margin: auto 0 ;
+            width: 20rem ;
+        }
+    }
+}
+
+/************   Registration and Login Form End   *************/ 
+
+
+/**************  media query section css  **************/
+
+@media (width <= 998px) {
+    .grid-two-cols {
+      grid-template-columns: 1fr;
+    }
+  
+    .section-registration, .section-contact {
+        & .registration-image img, & .contact-img {
+            width: 55%;
+            height: auto;
+        }
+    }
+  }
+  
+  @media (width <= 698px) {
+    .section-registration {
+        & .registration-image img {
+            width: 45% ;
+            height: auto;
+        }
+  
+      & .registration-form {
+        & input {
+          width: 100%;
+          padding: 0.6rem 0.6rem;
+        }
+      }
+    }
+  }
+
+
+
+/**************  Card section CSS START  **************/
+
+.card { 
+    border: 2px solid var(--btn-color) ;
+    padding-bottom: 1rem;
+    border-radius: 3rem ;
+
+    transition: all 0.6s ease-in-out ;
+}
+
+.card-container{
+    margin-left: 15%;
+    width: 25%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+    margin-bottom: 5%;
+    margin-right: 15rem;
+}
+
+.card-img {
+    padding: 2rem 2rem 2rem 1rem ;
+}
+
+/* .card {
+} */
+
+.card-details {
+    padding-bottom: 1rem;
+    
+    & h2{
+        font-size: 3rem;
+        padding: 1rem 0 ;
+    }
+}
+
+.card:hover{
+    background-color: #4802f831;
+    transform: scale(1.06);
+}
+
+.card-dist{
+    display: flex;
+    justify-content: space-around;
+}
+
+.card-others{
+    & h2 {
+        color: rgb(243, 7, 156);
+    }
+    & p {
+        color: #00ffaa;
+    }
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.main-heading{
+    animation: animateHeading 21s ease-in-out infinite ;
+    font-size: 4vw;
+
+    background: -webkit-repeating-linear-gradient(-60deg, #0022ff, pink, rgba(185, 205, 52, 0.859), #b100f7, #01b8b2, aliceblue, #7c0ebc, rgb(6, 255, 255), rgb(228, 90, 235));
+    
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    background-size: 10000%;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes animateHeading{
+    0%{
+        background-position: 0% 0%;
+    }
+    25%{
+        background-position: 100% 100%;
+    }
+    50%{
+        background-position: 10% 100%;
+    }
+    75%{
+        background-position: 10% 0%;
+    }
+    100%{
+        background-position: 0% 0%;
+    }
+}
+
+/**************  Card section CSS END **************/
+
+.toastBody {
+    font-family: "Atlas Grotesk Web", Arial, Helvetica, sans-serif;
+    font-size: 1.9rem ;
+}
+
+
+
+/************** Table Section CSS START **************/
+
+table {
+    background: rgb(0, 0, 0);
+    box-shadow: #13e900 0px -5px 30px ;
+    border-collapse: collapse;
+    border-radius: 1rem;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+
+tr {
+    align-items: center;
+    box-shadow: 0 0.3rem 0 gray;
+    border-bottom: 4px solid transparent;
+    padding-top: 2rem;
+    /* color: rgb(255, 255, 255); */
+    font-size: 2.1rem;
+    
+    & th.No{
+        padding-left: 1rem;
+    }
+}
+
+.contacts-table-tr{
+    word-break: break-all;
+    display: grid;
+    grid-template-columns: 5% 15% 11% 58% 12%;
+    /* text-align: center; */
+    padding-right: 2rem;
+    color: rgb(98, 0, 255);
+}
+
+.users-table-tr{
+    display: grid;
+    grid-template-columns: 3% 25% 25% 15% 15% 15%;
+}
+
+.table-row{
+    background-color: rebeccapurple;
+    color: #ffffff;
+    /* margin-bottom: -1rem; */
+    font-size: 2.2rem;
+    padding-bottom: 1.9rem ;
+}
+
+.index{
+    color: rgb(0, 255, 115);
+    font-size: 2.2rem ;
+    padding-left: 2rem;
+}
+
+td {
+    font-size: 2rem;
+    padding: 1rem; 
+}
+
+td div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+
+    &.index {
+        /* display: inline; */
+        margin-right: 10rem;
+        width: 0px;
+    }
+    
+    &.username {
+        color: rgb(0, 183, 255) ;
+        padding: 1rem; 
+        word-break: break-word; 
+    }
+
+    &.email {
+        color: rgb(1, 255, 192);
+        padding: 1rem;
+        word-break: break-word;
+        margin-left: 1rem; 
+    }
+
+    &.phone{
+        color: #00f71d;
+    }
+
+    &.edit button {
+        background-color: orange;
+        padding: 1rem 2rem;
+    }
+
+    &.delete button{
+        background-color: red;
+        width: 10rem;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 700px) {
+    td {
+        font-size: 1.6rem;
+    }
+
+    td div{
+        &.edit button, &.delete button{
+            width: 80%;
+            margin: 0 auto;
+            font-size: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 2rem;
+        }
+        &.delete button{
+            font-size: 70%;
+            width: 90%;
+            /* margin:0; */
+        }
+    }
+} 

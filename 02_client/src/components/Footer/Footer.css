@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.footer{
+    width: 100%;
+    height: 6.8rem;
+    background-color: #3d46f9;
+    display: flex;
+    justify-content: center ;
+    align-items: center ;
+}
+
+.footer-NavLink{
+    color: aliceblue;
+    
+}
+
+.footer-NavLink:hover{
+    color: rgb(0, 225, 255);
+}
