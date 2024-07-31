@@ -461,7 +461,7 @@ tr {
 .contacts-table-tr{
     word-break: break-all;
     display: grid;
-    grid-template-columns: 5% 15% 11% 58% 12%;
+    grid-template-columns: 5% 15% 20% 50% 10%;
     /* text-align: center; */
     padding-right: 2rem;
     color: rgb(98, 0, 255);

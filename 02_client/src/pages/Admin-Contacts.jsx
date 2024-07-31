@@ -12,13 +12,13 @@ export const AdminContacts = () => {
 
     const getAllContacts = async() => {
         try{
-            const response = await fetch(`http://localhost:5000/api/admin/contacts`, {
+            const response = await fetch(`http://localhost:4000/api/admin/contacts`, {
                 method: "GET",
                 headers: {
                     Authorization: `Bearer ${token}`
                 },
             });
-
+ 
             const ContactData = await response.json() ;
 
             console.log("Admin-Contacts.jsx Data : ", ContactData) ;
@@ -43,7 +43,7 @@ export const AdminContacts = () => {
 
     const deleteUser = async(id) => {
         try{
-            const response = await fetch(`http://localhost:5000/api/admin/contacts/delete/${id}`,{
+            const response = await fetch(`http://localhost:4000/api/admin/contacts/delete/${id}`,{
                 method: "DELETE",
                 headers: {
                     Authorization: `Bearer ${token}`
@@ -67,10 +67,12 @@ export const AdminContacts = () => {
     }
 
     return (<>
-        <section className="container">
-            <div >
+        <section>
+            <div className="container">
                 <h1 className="main-heading">Contacts Data</h1>
+            </div>
 
+            <div >
                 <div className="container ">
                     <table>
                         <thead>

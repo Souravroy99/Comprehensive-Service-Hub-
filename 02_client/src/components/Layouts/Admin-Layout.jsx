@@ -14,21 +14,24 @@ const AdminLayout = () => {
     if(isLoading === true) {
         return <h1>Loading...</h1>
     }
+    else {
+
+        console.log("Admin-Layout : ", user)
+        
+        if(isLoggedIn === false) {
+            toast.warning('Login First') ;
+            navigate('/login')
+            return ;
+        }
+
+        if(user.isAdmin === false) {
+            toast.warning('User is not an admin') ;
+            console.log("If user is not an admin then, user is unable to visit Admin Panel")
+            navigate('/')
+            return ;
+        }
+    }
     
-    console.log("Admin-Layout : ", user)
-    if(isLoggedIn === false) {
-        toast.warning('Login First') ;
-        navigate('/login')
-        return ;
-    }
-
-    if(user.isAdmin === false) {
-        toast.warning('User is not an admin') ;
-        console.log("If user is not an admin you are not able to visit Admin Panel")
-        navigate('/')
-        return ;
-    }
-
 
     return (
         <>

@@ -34,11 +34,10 @@ app.use('/api/data', serviceRouter) ;
 app.use('/api/admin', adminRouter) ;
 
 
-
  
 app.use(errorMiddleware) ;
 
-const Port = 5000 ;
+const Port = 4000 ;
 
 connectDB()
 .then(()=>{

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose') ;
 const bcrypt = require('bcryptjs') ;   // Two functions --> Hash & Compare
 const jwt = require('jsonwebtoken') ;
-
+ 
 
 const userSchema = new mongoose.Schema({  
     username: { 
@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
     },
     isAdmin: { 
         type: Boolean,
-        default: true,
+        default: false,
     }
 });
 
@@ -33,7 +33,7 @@ userSchema.pre('save', async function(next){
                       
     const user = this ;
 
-    if(!user.isModified('password')) {
+    if(!user.isModified('password')) { //  Have doubt
         next() ;
     }
 
@@ -59,7 +59,7 @@ userSchema.pre('save', async function(next){
 
 
 // JSON Web Token // Have some doubt
-userSchema.methods.generateToken = async function(){  // Have Doubt
+userSchema.methods.generateToken = async function(){  // If we use arrow function we are then unable to use 'this'.
     try{
         return jwt.sign(
             {
@@ -80,7 +80,6 @@ userSchema.methods.generateToken = async function(){  // Have Doubt
 
 
 // Compare the password
-
 userSchema.methods.comparePassword = async function(password){
     const user = this ;
     return await bcrypt.compare(password, user.password) ;

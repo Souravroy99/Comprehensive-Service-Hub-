@@ -16,7 +16,7 @@ export const AuthProvider = (props) => {
 
 
     const storeTokenInLocalStorage = (serverToken) => {
-
+    
         setToken(serverToken); // Very Important
         return localStorage.setItem("token", serverToken) ;
     }
@@ -32,7 +32,6 @@ export const AuthProvider = (props) => {
     console.log(isLoggedIn, token)
 
 
-
     // Logout Functionality
     const LogoutUser = () => {
         setToken("") ;
@@ -45,7 +44,7 @@ export const AuthProvider = (props) => {
         try{        
             setIsLoading(true)                             
 
-            const response = await fetch(`http://localhost:5000/api/auth/user`, {
+            const response = await fetch(`http://localhost:4000/api/auth/user`, {
                 method: "GET",
                 headers: {
                     Authorization: `Bearer ${token}`
@@ -55,12 +54,12 @@ export const AuthProvider = (props) => {
             const data = await response.json() ;
             if(response.ok) {
                 setUser(data.userData) ;
-                setIsLoading(false) ;  // This loading effect stops the first time unnecessary rendering
             } 
             else {
                 console.log("The user is not LoggedIn(auth.jsx), So we are unable to provide JWT Token!!!");
-                setIsLoading(false) ;
             }
+
+            setIsLoading(false) ;  // This loading effect stops the first time unnecessary rendering
         } 
         catch(error) {
             console.log("Error in fetching user data(auth.jsx) : ", error) ;
@@ -71,7 +70,7 @@ export const AuthProvider = (props) => {
     // To fetch Services data from database
     const getServices = async() => {
         try {
-            const response = await fetch(`http://localhost:5000/api/data/service`, {
+            const response = await fetch(`http://localhost:4000/api/data/service`, {
                 method: "GET",
             });
 

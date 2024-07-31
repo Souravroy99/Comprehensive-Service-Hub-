@@ -12,7 +12,6 @@ router.route('/login').post(validate(signupSchema.loginSchema), auth.login) ;
 
 router.route('/user').get(authMiddleware, auth.user) ; // To fetch current user data 
 
- 
 module.exports = router ; 
 
 

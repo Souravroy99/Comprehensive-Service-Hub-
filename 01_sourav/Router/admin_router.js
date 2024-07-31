@@ -7,7 +7,7 @@ const adminMiddleware = require('../middleware/admin_middleware') ;
 
 /*-----------------------------User----------------------------*/
 
-// Fetch All the users
+// Fetch All the users 
 router.route('/users').get(authMiddleware, adminMiddleware, adminController.getAllUsers) ;
 
 
@@ -27,6 +27,7 @@ router.route('/users/delete/:ID').delete(authMiddleware, adminMiddleware, adminC
 
 
 /*-----------------------------Contacts----------------------------*/
+
 // Fetch all Contact Messages
 router.route('/contacts').get(authMiddleware, adminMiddleware, adminController.getAllContactMessages) ;
 

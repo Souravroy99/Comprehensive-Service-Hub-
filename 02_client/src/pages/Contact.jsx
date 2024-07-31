@@ -49,7 +49,7 @@ const Contact = () => {
         e.preventDefault() ;
         
         try{
-            const response = await fetch(`http://localhost:5000/api/form/contact`, {
+            const response = await fetch(`http://localhost:4000/api/form/contact`, {
                 method: "POST",
                 headers: {'Content-Type': "application/json"},
                 'body': JSON.stringify(Contact),
@@ -73,7 +73,7 @@ const Contact = () => {
                 const errorData = await response.json() ;
                 toast.error(errorData.extraDetails ? errorData.extraDetails : errorData.message);
 
-                console.log(`Connection error in 'Contact form' response`) ;
+                console.log(`Connection error in Frontend part 'Contact form' response`) ;
             }
         }   
         catch(error){
@@ -132,7 +132,7 @@ const Contact = () => {
                     </div>
                 </div>
         </section>
-    </>
+    </> 
 };
 
 export default Contact; 

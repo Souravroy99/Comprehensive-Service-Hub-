@@ -1,10 +1,12 @@
+import { useEffect } from "react";
 import { Analytics } from "../components/Analytics";
 import { useAuth } from "../store/auth";
 
 export const About = () => {
 
     const { user } = useAuth() ;
-    const isUserExists = !!user ;
+    let isUserExists = user ;  
+
 
     return (<>
         <section className="section-hero">
@@ -14,7 +16,7 @@ export const About = () => {
                 {
                     isUserExists 
                     ? (<p style={{color:'red'}}>Hi, {user.username}</p>)
-                    : (<p>Hello Everyone</p>)
+                    : (<p>Hey Champ!</p>)
                 }
                     <h1>Why Choose Us?</h1>
             

@@ -18,13 +18,13 @@ const AdminUpdate = () => {
     // Fetching initial information
     const fetchUser = async () => {
         try {
-            const response = await fetch(`http://localhost:5000/api/admin/users/${id}`, {
+            const response = await fetch(`http://localhost:4000/api/admin/users/${id}`, {
                 method: "GET",
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
             });
-
+ 
             const data = await response.json();
 
             if (response.ok) {
@@ -55,7 +55,7 @@ const AdminUpdate = () => {
         eve.preventDefault();  // Stops the refreshment
 
         try {
-            const response = await fetch(`http://localhost:5000/api/admin/users/update/${id}`, {
+            const response = await fetch(`http://localhost:4000/api/admin/users/update/${id}`, {
                 method: "PATCH",
                 headers: {
                     Authorization: `Bearer ${token}`,

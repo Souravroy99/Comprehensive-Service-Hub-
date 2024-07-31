@@ -9,7 +9,7 @@ import { Logout } from "./pages/Logout.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import { Footer } from "./components/Footer/Footer.jsx";
 import { Error } from "./pages/Error.jsx" 
-import AdminLayout from "./components/Layouts/Admin-Layout.jsx";
+import AdminLayout from "./components/Layouts/Admin-Layout.jsx"; 
 import { AdminUsers } from "./pages/Admin-Users.jsx";
 import { AdminContacts } from "./pages/Admin-Contacts.jsx";
 // import AdminUpdate from "./pages/Admin-Update.jsx"
@@ -52,3 +52,53 @@ function App() {
 }
 
 export default App
+
+
+
+// useReducer(x,y) ==> x = Reducer Function, y = Default State
+// This hook returns an array of state and dispatch function
+// const [state, dispatch] = useReducer(reducer, initialState) // initialState = {count: 0}
+
+
+// import {useReducer} from 'react'
+
+// function App() {
+
+//   const initialState = {count: 0} ;
+
+//   const reducer = (state, action) => {
+//       switch (action.type) {
+//           case "Inc": {
+//               return {count: state.count+1} ;
+//         }
+//           case "Dec": {
+//               return {count: state.count-1} ;
+//         }
+//           case "Input": {
+//               return {count: action.payload} ;
+//           }
+//           default: {
+//               return state ;
+//           }
+//       }
+//   }
+
+//   const [state, dispatch] = useReducer(reducer, initialState) ;
+
+//   return (<>
+//         <h1>{state.count}</h1>
+
+//         <button onClick={()=>dispatch({type: "Dec"})}>Decrease</button>
+//         <button onClick={()=>dispatch({type: "Inc"})}>Increase</button>
+//         <br />
+
+//         <input 
+//             type="number" 
+//             value={state.count} 
+//             onChange={(event) => dispatch({type:"Input", payload: Number(event.target.value)})}
+
+//         />
+//   </>)
+// }
+
+// export default App
