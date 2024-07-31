@@ -45,7 +45,7 @@ const Contact = () => {
     };
 
     const handleSubmit = async(e) => {
-        console.log(e) ;
+        // console.log(e) ;
         e.preventDefault() ;
         
         try{

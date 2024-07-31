@@ -1,7 +1,7 @@
 // Outlet --> When we use nested loop then for showing the child routes we need to use 'Outlet'.
-import {NavLink, Outlet, useNavigate} from 'react-router-dom'
-import {FaUser , FaRegListAlt , FaHome} from 'react-icons/fa'
-import { FaMessage } from 'react-icons/fa6'
+import {NavLink, Outlet, useNavigate} from 'react-router-dom';
+import {FaUser , FaRegListAlt , FaHome} from 'react-icons/fa';
+import { FaMessage } from 'react-icons/fa6';
 import { useAuth } from '../../store/auth';
 import { toast } from 'react-toastify';
 

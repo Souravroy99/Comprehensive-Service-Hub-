@@ -343,7 +343,7 @@ a:hover, a.active{
     border-radius: 3rem ;
 
     transition: all 0.6s ease-in-out ;
-}
+} 
 
 .card-container{
     margin-left: 15%;
@@ -469,7 +469,7 @@ tr {
 
 .users-table-tr{
     display: grid;
-    grid-template-columns: 3% 25% 25% 15% 15% 15%;
+    grid-template-columns: 3% 20% 20% 15% 10% 15% 15%;
 }
 
 .table-row{
@@ -518,6 +518,10 @@ td div {
 
     &.phone{
         color: #00f71d;
+    }
+
+    &.isAdmin{
+        color: rgb(0, 76, 255);
     }
 
     &.edit button {

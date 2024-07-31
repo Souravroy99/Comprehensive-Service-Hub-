@@ -11,8 +11,7 @@ const Home = () => {
                 <div className="hero-content">
                     <p>Hello everyone, I hope you all are doing extremly well.</p>
                     <h1>Welcome to my website</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse illo incidunt voluptate reiciendis omnis sed modi nihil atque rerum dicta eos magnam error officiis cumque, praesentium molestias itaque. Est, quos?
-                    </p>
+                    <p>Welcome to my website! I’m thrilled to have you here and excited to share with you the valuable resources and insights available. Whether you're exploring new learning opportunities, seeking expert advice, or just curious about what we offer, you've come to the right place. My goal is to provide a comprehensive and engaging experience that meets your needs and exceeds your expectations. Take a look around, and feel free to reach out if you have any questions or need further information. Enjoy your visit!</p>
 
                     <div className="btn btn-group">
                         <NavLink to="/contact"><button className="btn ">Connect Now</button></NavLink>

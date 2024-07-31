@@ -19,7 +19,6 @@ const getAllUsers = async(req, res) => {
 }
 
 
-
 // 2. ************ All Contact Fetch Logic ************ //
 const getAllContactMessages = async(req, res) => {
     try{
@@ -37,20 +36,19 @@ const getAllContactMessages = async(req, res) => {
 }
 
 
-
 // 3. ************ User Delete Logic ************ //
 const deleteUserById = async(req, res) => {
     try {
         const id = req.params.ID ; // I get this 'ID' from URL
-        const token = User.findOne({_id:id}, {token:1}) ;
+        const deletedUserToken = User.findOne({_id:id}, {token:1}) ;
+
         await User.deleteOne({_id: id}) ; 
-        return res.status(200).json({token:token}) ;
+        return res.status(200).json({token: deletedUserToken}) ;
     }
     catch(error){
         next(error) ;
     }
 }
-
 
 
 // 4. ************ Contact Message Delete Logic ************ //
@@ -67,7 +65,7 @@ const deleteContactByID = async(req, res) => {
 
  
 // 5. ************ Single User Fetch Logic ************ //
-const getUserByID = async(req, res)=> {
+const getUserByID = async(req, res) => {
     try{
         const id = req.params.id ;
         const userData = await User.findOne({_id : id}).select({password:0}) ;

@@ -24,12 +24,13 @@ export const AuthProvider = (props) => {
 
     // Check that, is the user loggedIn or not
     const isLoggedIn = !!token ;
+    const isAdmin = user.isAdmin;
 
     if(isLoggedIn === false) console.log("User is logged out") ;
     else console.log("User is logged in") ;
 
 
-    console.log(isLoggedIn, token)
+    console.log(isLoggedIn, !!token, "auth.jsx TOKEN: ", token)
 
 
     // Logout Functionality
@@ -39,8 +40,8 @@ export const AuthProvider = (props) => {
     };
  
 
-    // JWT AUTHENTICATION - to get the currently LoggedIn user data from Backend
-    const userAuthentication = async() => {  // Never write (req,res), because this is 'Frontend'
+    // JWT AUTHENTICATION - to get the currently LoggedIn user data from Backend.
+    const userAuthentication = async() => {  // Never write (req,res) in 'Frontend'.
         try{        
             setIsLoading(true)                             
 
@@ -102,7 +103,8 @@ export const AuthProvider = (props) => {
                                         user, 
                                         services, 
                                         token,
-                                        isLoading } }>
+                                        isLoading,
+                                        isAdmin } }>
             {props.children} 
         </AuthContext.Provider>
     )

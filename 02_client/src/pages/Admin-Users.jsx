@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react" ;
 import { useAuth } from "../store/auth" ;
 import { toast } from 'react-toastify' ;
-import { useNavigate } from 'react-router-dom'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from 'react-router-dom';
 
 
 export const AdminUsers = () => { 
@@ -72,10 +71,6 @@ export const AdminUsers = () => {
 
 
 
-  //*************** Edit User ***************//
-
-
-
     return (<>
         <section>
             <div className="container">
@@ -90,6 +85,8 @@ export const AdminUsers = () => {
                             <th>Name</th>
                             <th>Email</th>
                             <th>Phone</th>
+                            <th>Admin</th>
+
                             <th>Update</th>
                             <th>Remove</th>
                         </tr>
@@ -103,7 +100,9 @@ export const AdminUsers = () => {
                                 <td><div className="username">{curr.username}</div></td>
                                 <td><div className="email">{curr.email}</div></td>
                                 <td><div className="phone">{curr.phone}</div></td>
-                                <td><div className="edit"><button ><Link to={`admin/users/edit`} >Edit</Link></button></div></td>
+                                <td><div className="isAdmin">{curr.isAdmin === true ? "YES" : "NO"}</div></td>
+
+                                <td><div className="edit"><button><Link to={`${curr._id}/edit`} >Edit</Link></button></div></td>
                                 <td><div className="delete"><button onClick={() => deleteUser(curr._id)}> Delete </button></div></td>
                             </tr> 
                         )
@@ -117,4 +116,4 @@ export const AdminUsers = () => {
     </>)
 }
 
-export default AdminUsers
+export default AdminUsers;
