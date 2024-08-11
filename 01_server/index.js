@@ -9,8 +9,8 @@ const contactRouter = require('./Router/contact_router.js') ;
 const serviceRouter = require('./Router/service_router.js') ;
 const adminRouter = require('./Router/admin_router.js') ;
 
-const connectDB = require('./utils/Database.js')
-const errorMiddleware = require('./middleware/error_middleware.js')
+const connectDB = require('./utils/Database.js') ;
+const errorMiddleware = require('./middleware/error_middleware.js') ;
 
 
 //Middleware---1
