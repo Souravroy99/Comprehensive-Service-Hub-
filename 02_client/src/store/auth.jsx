@@ -72,7 +72,7 @@ export const AuthProvider = (props) => {
     // To fetch Services data from database
     const getServices = async() => {
         try {
-            const response = await fetch(`http://localhost:4000/api/data/service`, {
+            const response = await fetch(`${url}/api/data/service`, {
                 method: "GET",
             });
 
