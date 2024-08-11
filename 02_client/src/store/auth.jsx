@@ -95,9 +95,11 @@ export const AuthProvider = (props) => {
         userAuthentication() ;
     }, []);
 
+    const url = "http://localhost:4000" ;
 
     return (
-        <AuthContext.Provider value={ { storeTokenInLocalStorage, 
+        <AuthContext.Provider value={ { url,
+                                        storeTokenInLocalStorage, 
                                         LogoutUser, 
                                         isLoggedIn, 
                                         user, 

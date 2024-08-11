@@ -13,7 +13,7 @@ const Contact = () => {
     // Update username and email if the user LoggedIn
     const [userData, setUserData] = useState(true) ;
 
-    const { user, token, isLoggedIn } = useAuth() ;
+    const { user, token, isLoggedIn, url } = useAuth() ;
 
     if(userData && user){
         setContact({
@@ -49,7 +49,7 @@ const Contact = () => {
         e.preventDefault() ;
         
         try{
-            const response = await fetch(`http://localhost:4000/api/form/contact`, {
+            const response = await fetch(`${url}/api/form/contact`, {
                 method: "POST",
                 headers: {'Content-Type': "application/json"},
                 'body': JSON.stringify(Contact),

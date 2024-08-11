@@ -31,7 +31,7 @@ const Register = () => {
         }))
     }
 
-    const { storeTokenInLocalStorage } = useAuth() ;
+    const { storeTokenInLocalStorage, url } = useAuth() ;
 
     // Handling form submission 
     const handleSubmit = async (e) => {
@@ -39,7 +39,7 @@ const Register = () => {
       console.log(user);
   
       try { 
-        const response = await fetch(`http://localhost:4000/api/auth/register`, {
+        const response = await fetch(`${url}/api/auth/register`, {
           method: "POST",
           headers: {"Content-Type": "application/json",},
           body: JSON.stringify(user),

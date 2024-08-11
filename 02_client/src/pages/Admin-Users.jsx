@@ -7,14 +7,14 @@ import { Link, useNavigate } from 'react-router-dom';
 export const AdminUsers = () => { 
 
     const [users, setUsers] = useState([]) ; 
-    const { token } = useAuth() ;
+    const { token, url } = useAuth() ;
     const navigate = useNavigate() ;
 
     const getAllUsersData = async() => {
         console.log(token) ;
 
         try{
-            const response = await fetch(`http://localhost:4000/api/admin/users`, {
+            const response = await fetch(`${url}/api/admin/users`, {
                 method: 'GET',
                 headers: {Authorization: `Bearer ${token}`}
             });
@@ -44,7 +44,7 @@ export const AdminUsers = () => {
     
     const deleteUser = async(id) => {
         try{
-            const response = await fetch(`http://localhost:4000/api/admin/users/delete/${id}`, {
+            const response = await fetch(`${url}/api/admin/users/delete/${id}`, {
                 method:"DELETE",
                 headers:{
                     Authorization: `Bearer ${token}`

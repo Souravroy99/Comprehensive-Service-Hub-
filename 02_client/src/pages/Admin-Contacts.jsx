@@ -6,13 +6,13 @@ import {useNavigate} from "react-router-dom"
 export const AdminContacts = () => {
 
     const [contacts, setContacts] = useState([]) ;
-    const {token} = useAuth() ;
+    const {token, url} = useAuth() ;
     const navigate = useNavigate() ;
 
 
     const getAllContacts = async() => {
         try{
-            const response = await fetch(`http://localhost:4000/api/admin/contacts`, {
+            const response = await fetch(`${url}/api/admin/contacts`, {
                 method: "GET",
                 headers: {
                     Authorization: `Bearer ${token}`
@@ -43,7 +43,7 @@ export const AdminContacts = () => {
 
     const deleteUser = async(id) => {
         try{
-            const response = await fetch(`http://localhost:4000/api/admin/contacts/delete/${id}`,{
+            const response = await fetch(`${url}/api/admin/contacts/delete/${id}`,{
                 method: "DELETE",
                 headers: {
                     Authorization: `Bearer ${token}`

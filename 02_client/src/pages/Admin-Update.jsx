@@ -7,7 +7,7 @@ import { useAuth } from "../store/auth";
 const AdminUpdate = () => {
 
     const {id} = useParams();
-    const { token } = useAuth();
+    const { token, url } = useAuth();
     const navigator = useNavigate();
 
     const [user, setUser] = useState({
@@ -21,7 +21,7 @@ const AdminUpdate = () => {
     // Fetching initial information
     const fetchUser = async () => {
         try {
-            const response = await fetch(`http://localhost:4000/api/admin/users/${id}`, {
+            const response = await fetch(`${url}/api/admin/users/${id}`, {
                 method: "GET",
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -58,7 +58,7 @@ const AdminUpdate = () => {
         eve.preventDefault();  // Stops the refreshment
 
         try {
-            const response = await fetch(`http://localhost:4000/api/admin/users/update/${id}`, {
+            const response = await fetch(`${url}/api/admin/users/update/${id}`, {
                 method: "PATCH",
                 headers: {
                     'Authorization': `Bearer ${token}`,
