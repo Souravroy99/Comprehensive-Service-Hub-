@@ -8,6 +8,7 @@ export const AuthContext = createContext() ;    // Context API
 // Step 2 
 export const AuthProvider = (props) => {
 
+    const url = "https://comprehensive-service-hub-backend.onrender.com" ;
 
     const [token, setToken] = useState(localStorage.getItem('token')) ; // localStorage.getItem('token')
     const [isLoading, setIsLoading] = useState(true)
@@ -45,7 +46,7 @@ export const AuthProvider = (props) => {
         try{        
             setIsLoading(true)                             
 
-            const response = await fetch(`http://localhost:4000/api/auth/user`, {
+            const response = await fetch(`${url}/api/auth/user`, {
                 method: "GET",
                 headers: {
                     Authorization: `Bearer ${token}`
@@ -95,7 +96,6 @@ export const AuthProvider = (props) => {
         userAuthentication() ;
     }, []);
 
-    const url = "https://comprehensive-service-hub-backend.onrender.com" ;
 
     return (
         <AuthContext.Provider value={ { url,
