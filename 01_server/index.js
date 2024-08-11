@@ -17,7 +17,8 @@ const errorMiddleware = require('./middleware/error_middleware.js')
 // Cors ---> Cross-Origin Resource Sharing
 
 const corsOptions = {
-    origin: "http://localhost:5173",
+    // origin: "http://localhost:5173",
+    origin: "https://comprehensive-service-hub-frontend.onrender.com",
     methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
     credentials: true,
 };
