@@ -69,7 +69,7 @@ userSchema.methods.generateToken = async function(){  // If we use arrow functio
             }, 
             process.env.JWT_SECRET_KEY,
             {
-                expiresIn:'30d'
+                expiresIn:'5d'
             }
         ) ;
     }

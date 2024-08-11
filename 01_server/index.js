@@ -17,7 +17,8 @@ const errorMiddleware = require('./middleware/error_middleware.js')
 // Cors ---> Cross-Origin Resource Sharing
 
 const corsOptions = {
-    origin: "http://localhost:5173",
+    // origin: "http://localhost:5173",
+    origin: ["https://deploy-mern-lwhq.vercel.app"],
     methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
     credentials: true,
 };
@@ -25,7 +26,6 @@ app.use(cors(corsOptions)) ;
 
 //Middleware---2
 app.use(express.json()) ; 
-
 
 
 app.use('/api/auth', authRouter) ;
