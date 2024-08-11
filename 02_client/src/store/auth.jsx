@@ -95,7 +95,7 @@ export const AuthProvider = (props) => {
         userAuthentication() ;
     }, []);
 
-    const url = "http://localhost:4000" ;
+    const url = "https://comprehensive-service-hub-backend.onrender.com" ;
 
     return (
         <AuthContext.Provider value={ { url,
