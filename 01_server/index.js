@@ -1,8 +1,8 @@
-require('dotenv').config() // For .env 
+require('dotenv').config(); // For .env 
 
-const express = require('express')
-const cors = require('cors')
-const app = express()
+const express = require('express') ;
+const cors = require('cors') ;
+const app = express() ;
 
 const authRouter = require('./Router/auth_router.js') ;
 const contactRouter = require('./Router/contact_router.js') ;
@@ -11,6 +11,12 @@ const adminRouter = require('./Router/admin_router.js') ;
 
 const connectDB = require('./utils/Database.js') ;
 const errorMiddleware = require('./middleware/error_middleware.js') ;
+
+/*
+ 
+Hosted Project Link: https://comprehensive-service-hub-frontend.onrender.com
+
+*/
 
 
 //Middleware---1

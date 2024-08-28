@@ -49,7 +49,6 @@ const Register = () => {
             const responseData = await response.json();
             toast.success("Registration successfully done.");
 
-
             // Store the token in Local Host
             storeTokenInLocalStorage(responseData.token) ; 
 
