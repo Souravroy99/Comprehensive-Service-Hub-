@@ -5,7 +5,7 @@ export const Footer = () => {
     return <>
 
         <footer className="footer">
-            <NavLink className="footer-NavLink" to="https://www.linkedin.com/in/sourav-roy-10e7" target="/blank">LinkedIn</NavLink>
+            <NavLink className="footer-NavLink" to="https://www.linkedin.com/in/sourav-roy-117447256/" target="/blank">LinkedIn</NavLink>
         </footer>
 
     </>
