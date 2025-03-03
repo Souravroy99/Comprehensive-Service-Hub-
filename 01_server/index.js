@@ -14,7 +14,7 @@ const errorMiddleware = require('./middleware/error_middleware.js') ;
 
 /*
  
-Hosted Project Link: https://comprehensive-service-hub-frontend.onrender.com
+Hosted Project Link: https://comprehensive-service-hub-frontend-new.onrender.com
 
 */
 
@@ -23,8 +23,7 @@ Hosted Project Link: https://comprehensive-service-hub-frontend.onrender.com
 // Cors ---> Cross-Origin Resource Sharing
 
 const corsOptions = {
-    // origin: "http://localhost:5173",
-    origin: "https://comprehensive-service-hub-frontend.onrender.com",
+    origin: ["http://localhost:5173", "https://comprehensive-service-hub-frontend-new.onrender.com"],
     methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
     credentials: true,
 };
